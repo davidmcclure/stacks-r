@@ -15,7 +15,7 @@ CountWords = function(db.file, texts.dir, out.file, chunk.size=10000) {
 
   # Build text list.
 
-  conn = dbConnect(RSQLite::SQLite(), 'metadata.db')
+  conn = dbConnect(RSQLite::SQLite(), db.file)
 
   ecco.query = dbSendQuery(conn, "SELECT corpus, text_hash from ecco_text where pub_date > '1790-01-01' and pub_date < '1795-01-01' limit 10")
   ecco.texts = dbFetch(ecco.query)
