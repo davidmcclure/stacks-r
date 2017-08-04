@@ -61,7 +61,8 @@ CountWords = function(db.file, texts.dir, out.file, chunk.size=10000) {
         # Merge in the new counts with the accumulator.
         counts = tapply(c(counts, new.counts), names(c(counts, new.counts)), sum)
 
-        print(Sys.time(), path.tokens)
+        print(Sys.time())
+        print(path.tokens)
 
       }
 
